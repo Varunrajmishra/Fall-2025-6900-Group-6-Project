@@ -1,0 +1,34 @@
+artifact_path: outputs/mlflow-model
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.9.23
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: pickle
+    sklearn_version: 1.5.1
+metadata:
+  azureml.base_image: mcr.microsoft.com/azureml/curated/ai-ml-automl:27
+  azureml.engine: automl
+mlflow_version: 2.15.1
+model_size_bytes: 25211
+model_uuid: db6155db2c8c4add853db087fae89f11
+run_id: congestion_classification1_3
+signature:
+  inputs: '[{"type": "string", "name": "Facility", "required": true}, {"type": "string",
+    "name": "Direction", "required": true}, {"type": "float", "name": "Freeflow",
+    "required": true}, {"type": "integer", "name": "Month", "required": true}, {"type":
+    "integer", "name": "Year", "required": true}, {"type": "float", "name": "Avg_Speed",
+    "required": true}, {"type": "float", "name": "Delta", "required": true}, {"type":
+    "float", "name": "Temp_Max_Mean_2025", "required": true}, {"type": "float", "name":
+    "Temp_Min_Mean_2025", "required": true}, {"type": "float", "name": "Precip_Sum_mm_2025",
+    "required": true}, {"type": "float", "name": "Snow_Sum_cm_2025", "required": true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "int64", "shape": [-1]}}]'
+  params: null
+utc_time_created: '2025-10-23 22:55:05.821111'
